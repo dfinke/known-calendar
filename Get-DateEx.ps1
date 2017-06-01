@@ -1,13 +1,14 @@
 ﻿function Get-DateEx {    
     Add-Type -Path .\Chronic.dll
-     $cp = New-Object Chronic.Parser
+    $cp = New-Object Chronic.Parser
 
-    $q=$args -join ' '
+    $q = $args -join ' '
     $r = $cp.Parse($q)
 
-    if($r) {
+    if ($r) {
         $r.Start
-    } else {
+    }
+    else {
         "Could not parse: '$($q)'"
     }
 }
